@@ -70,18 +70,16 @@ map.on('locationfound', e =>{
 } );
 
 
-		socket.on('nuevasCoordenadas',coordenadas => {
-			//console.log(coordenadas);
-			//voy a enviarle un mensaje a todos los usuarios conectados
-			// socket.broadcast.emit('nuevasCoordenadas', coordenadas);
-			console.log(coordenadas);
+socket.on('nuevasCoordenadas',coordenadas => {
+	//console.log(coordenadas);
+	//voy a enviarle un mensaje a todos los usuarios conectados
+	// socket.broadcast.emit('nuevasCoordenadas', coordenadas);
+	console.log(coordenadas);
 
-			 const marcador= L.marker([coordenadas.lat, coordenadas.lng]) //+0.0001
-			    .bindPopup('nuevo.<br> estoy aqui.') 
-			    .openPopup();  
+	 const marcador= L.marker([coordenadas.lat, coordenadas.lng]) //+0.0001
+	    .bindPopup('nuevo.<br> estoy aqui.') 
+	    .openPopup();  
 
-			 map.addLayer(marcador);  //agregando una capa nueva al mapa
+	 map.addLayer(marcador);  //agregando una capa nueva al mapa
 
-
-
-		});
+});
